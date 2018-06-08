@@ -35,17 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 ,new CallFunc(new CallFunc.Caller() {
                         @Override
                         public void onCall() {
-                            System.out.println("anim FunctionAnimator end");
+                            System.out.println("anim fun call");
                         }}),
                 new AlphaTo(3000, 0.5f).easing(Skill.ExpoEaseInOut));
 
-//                new RotateTo(1000, 180).easing(Skill.BounceEaseOut)
-                EasyAnimation.with(new RotateTo(1000, 180).easing(Skill.BounceEaseOut))
+                EasyAnimation.with(anim)
                         .pivot(0.5f, 0.5f)
                         .playOn(targetView);
-//                YoYo.with(SequenceAnimator.createSequenceAnimator(new RotateAnimator(), new ScaleAnimator(), new AlphaAnimator())).playOn(targetView);
-
-//                YoYo.with(TogetherAnimator.createTogetherAnimator(SequenceAnimator.createSequenceAnimator(new RotateAnimator(), new ScaleAnimator()), new AlphaAnimator())).playOn(targetView);
             }
         });
     }
