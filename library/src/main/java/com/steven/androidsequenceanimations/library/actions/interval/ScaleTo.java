@@ -24,7 +24,7 @@ public class ScaleTo extends IntervalAction
 
     public ScaleTo(long duration, float scaleX,  float scaleY)
     {
-        this.initDuration(duration);
+        super(duration);
         this.scaleX = scaleX;
         this.scaleY = scaleY;
     }

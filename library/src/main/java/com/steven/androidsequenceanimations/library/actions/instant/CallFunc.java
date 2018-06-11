@@ -14,7 +14,7 @@ public class CallFunc extends InstantAction
 
     public interface Caller
     {
-        void onCall();
+        void onCall(View target);
     }
 
     private Caller mCaller = null;
@@ -25,14 +25,14 @@ public class CallFunc extends InstantAction
     }
 
     @Override
-    protected Animator[] prepare(View target, AnimatorSet animatorSet) {
+    protected Animator[] prepare(final View target, AnimatorSet animatorSet) {
         ValueAnimator animator = ValueAnimator.ofInt(0);
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
                 if(null != mCaller)
                 {
-                    mCaller.onCall();
+                    mCaller.onCall(target);
                 }
             }
         });

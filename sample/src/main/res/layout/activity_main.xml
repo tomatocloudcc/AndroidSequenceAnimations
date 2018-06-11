@@ -14,11 +14,36 @@
         android:layout_centerInParent="true"
          />
 
-    <Button
-        android:id="@+id/btnTest"
+    <TextView
+        android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="test"
+        android:text="Hello222"
+        android:layout_below="@+id/txt"
+        android:layout_centerHorizontal="true"
         />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        >
+        <Button
+            android:id="@+id/btnStartAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="btnStartAnim"
+            android:onClick="click"
+            />
+
+        <Button
+            android:id="@+id/btnGoToAnim2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GoToAnim2"
+            android:onClick="click"
+            />
+    </LinearLayout>
 
 </RelativeLayout>

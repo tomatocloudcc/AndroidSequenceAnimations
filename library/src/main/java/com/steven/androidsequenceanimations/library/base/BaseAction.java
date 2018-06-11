@@ -26,6 +26,7 @@ package com.steven.androidsequenceanimations.library.base;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.support.annotation.FloatRange;
 import android.support.v4.view.ViewCompat;
 import android.view.View;
 
@@ -41,6 +42,8 @@ public abstract class BaseAction {
 
     private Animator mPreparedAnimator = null;
 
+    protected View mTarget = null;
+
     protected void initDuration(long duration)
     {
         this.mDuration = duration;
@@ -54,8 +57,17 @@ public abstract class BaseAction {
      */
     public Animator[] doPrepare(View target, AnimatorSet animatorSet)
     {
-        Animator[] animators = this.prepare(target, animatorSet);
-        this.onPrepared(target, animatorSet, animators);
+        View realTarget;
+        if(this.mTarget != null)
+        {
+            realTarget = this.mTarget;
+        }
+        else
+        {
+            realTarget = target;
+        }
+        Animator[] animators = this.prepare(realTarget, animatorSet);
+        this.onPrepared(realTarget, animatorSet, animators);
         return animators;
     }
 
@@ -79,12 +91,39 @@ public abstract class BaseAction {
      * bind executor and prepare animations
      * @param target
      * @param animatorSet
+     * @param pivotX
+     * @param pivotY
      * @return
      */
-    public BaseAction bindTargetAndPrepare(View target, AnimatorSet animatorSet) {
+    protected BaseAction bindTargetAndPrepare(View target, AnimatorSet animatorSet,@FloatRange(from = 0, to = 1)  float pivotX,@FloatRange(from = 0, to = 1) float pivotY) {
         reset(target);
+        this.setPivot(this.mTarget, pivotX, pivotY);
         doPrepare(target, animatorSet);
+        return this;
+    }
 
+    /**
+     * bind executor view
+     * @param target
+     * @return
+     */
+    public BaseAction bindTarget(View target)
+    {
+        return this.bindTarget(target, 0.5f, 0.5f);
+    }
+
+    /**
+     * bind executor view
+     * @param target
+     * @param pivotX
+     * @param pivotY
+     * @return
+     */
+    public BaseAction bindTarget(View target, @FloatRange(from = 0, to = 1)  float pivotX,@FloatRange(from = 0, to = 1) float pivotY)
+    {
+        reset(target);
+        this.mTarget = target;
+        this.setPivot(this.mTarget, pivotX, pivotY);
         return this;
     }
 
@@ -108,4 +147,12 @@ public abstract class BaseAction {
         return mDuration;
     }
 
+    private void setPivot(View target, float pivotX, float pivotY)
+    {
+        if(null != target)
+        {
+            target.setPivotX(pivotX * target.getMeasuredWidth());
+            target.setPivotY(pivotY * target.getMeasuredHeight());
+        }
+    }
 }

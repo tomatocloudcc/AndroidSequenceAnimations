@@ -15,7 +15,13 @@ import com.steven.androidsequenceanimations.library.base.BaseAction;
  */
 public abstract class IntervalAction extends BaseAction
 {
+
     protected Skill mEasingType = null;
+
+    IntervalAction(long duration)
+    {
+        this.initDuration(duration);
+    }
 
     /**
      * set easing type

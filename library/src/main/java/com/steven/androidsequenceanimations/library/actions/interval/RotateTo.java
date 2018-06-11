@@ -1,18 +1,10 @@
 package com.steven.androidsequenceanimations.library.actions.interval;
 
-import android.animation.Animator;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.view.View;
-
 /**
  * Created by sulei on 2018/6/7.
  */
-public class RotateTo extends IntervalAction
+public class RotateTo extends RotateBy
 {
-    private int rotationX;
-    private int rotationY;
 
     /**
      * @param duration
@@ -31,15 +23,7 @@ public class RotateTo extends IntervalAction
      */
     public RotateTo(long duration, int rotationX,  int rotationY)
     {
-        this.initDuration(duration);
-        this.rotationX = rotationX;
-        this.rotationY = rotationY;
-    }
-
-    @Override
-    protected Animator[] prepare(View target, AnimatorSet animatorSet) {
-
-        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(target, PropertyValuesHolder.ofFloat("rotationX",this.rotationX), PropertyValuesHolder.ofFloat("rotationY",this.rotationY));
-        return  new Animator[]{animator};
+        super(duration, rotationX, rotationY);
+        this.isBy = false;
     }
 }

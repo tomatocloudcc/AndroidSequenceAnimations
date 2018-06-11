@@ -15,7 +15,7 @@ public class DelayTime extends IntervalAction
      */
     public DelayTime(long delayTime)
     {
-        this.initDuration(delayTime);
+        super(delayTime);
     }
 
     @Override

@@ -5,19 +5,18 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
-import android.support.annotation.FloatRange;
 import android.view.View;
 
 /**
  * Created by sulei on 2018/6/7.
  */
-public class AlphaTo extends IntervalAction
+public class FadeOut extends IntervalAction
 {
     private float mToAlpha = 1;
-    public AlphaTo(long duration, @FloatRange(from = 0, to = 1.0) float alpha)
+    public FadeOut(long duration)
     {
-        this.initDuration(duration);
-        this.mToAlpha = alpha;
+        super(duration);
+        this.mToAlpha = 0f;
     }
 
     @Override
