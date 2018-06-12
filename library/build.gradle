@@ -1,5 +1,16 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'pinwheel'
+    groupId ="com.steven"
+    artifactId = "avsa"
+    publishVersion = "0.0.1"
+    desc = 'AndroidViewSequenceaAimations'
+    website = 'https://github.com/suleisteven/AndroidSequenceAnimations.git'
+}
+
 android {
     compileSdkVersion 26
 
