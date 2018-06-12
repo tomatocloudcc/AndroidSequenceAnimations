@@ -10,7 +10,7 @@
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Hello Text1"
         android:layout_centerInParent="true"
          />
 
@@ -18,7 +18,7 @@
         android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello222"
+        android:text="Hello Text2"
         android:layout_below="@+id/txt"
         android:layout_centerHorizontal="true"
         />
@@ -33,7 +33,7 @@
             android:id="@+id/btnStartAnim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="btnStartAnim"
+            android:text="startAnim1"
             android:onClick="click"
             />
 

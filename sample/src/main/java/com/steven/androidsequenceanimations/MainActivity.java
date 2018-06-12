@@ -10,6 +10,7 @@ import com.daimajia.easing.Skill;
 import com.steven.androidsequenceanimations.library.actions.instant.CallFunc;
 import com.steven.androidsequenceanimations.library.base.BaseAction;
 import com.steven.androidsequenceanimations.library.base.EasyAnimation;
+import com.steven.androidsequenceanimations.library.base.EasyAnimationHelper;
 
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.EasyAnimationWrapper;
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.callFunc;
@@ -43,6 +44,9 @@ public class MainActivity extends Activity
             final float targetViewY= targetView.getY();
             final float targetView2X= targetView2.getX();
             final float targetView2Y= targetView2.getY();
+
+            EasyAnimationHelper.reset(targetView);
+            EasyAnimationHelper.reset(targetView2);
 
             BaseAction anim =
                     sequence(

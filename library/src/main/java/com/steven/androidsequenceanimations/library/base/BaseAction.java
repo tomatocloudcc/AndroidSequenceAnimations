@@ -27,7 +27,6 @@ package com.steven.androidsequenceanimations.library.base;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.support.annotation.FloatRange;
-import android.support.v4.view.ViewCompat;
 import android.view.View;
 
 /**
@@ -96,7 +95,6 @@ public abstract class BaseAction {
      * @return
      */
     protected BaseAction bindTargetAndPrepare(View target, AnimatorSet animatorSet,@FloatRange(from = 0, to = 1)  float pivotX,@FloatRange(from = 0, to = 1) float pivotY) {
-        reset(target);
         this.setPivot(this.mTarget, pivotX, pivotY);
         doPrepare(target, animatorSet);
         return this;
@@ -121,27 +119,11 @@ public abstract class BaseAction {
      */
     public BaseAction bindTarget(View target, @FloatRange(from = 0, to = 1)  float pivotX,@FloatRange(from = 0, to = 1) float pivotY)
     {
-        reset(target);
         this.mTarget = target;
         this.setPivot(this.mTarget, pivotX, pivotY);
         return this;
     }
 
-    /**
-     * reset the view to default status
-     *
-     * @param target
-     */
-    public void reset(View target) {
-        ViewCompat.setAlpha(target, 1);
-        ViewCompat.setScaleX(target, 1);
-        ViewCompat.setScaleY(target, 1);
-        ViewCompat.setTranslationX(target, 0);
-        ViewCompat.setTranslationY(target, 0);
-        ViewCompat.setRotation(target, 0);
-        ViewCompat.setRotationY(target, 0);
-        ViewCompat.setRotationX(target, 0);
-    }
 
     public long getDuration() {
         return mDuration;

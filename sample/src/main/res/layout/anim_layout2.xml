@@ -11,7 +11,7 @@
         android:id="@+id/btnStartAnim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StartAnim"
+        android:text="StartAnim2"
         android:layout_centerHorizontal="true"
         android:onClick="startAnim"
         />
