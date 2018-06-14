@@ -6,7 +6,17 @@ The library can help you build complex animations quickly, which wrapped Android
 
 ![](https://github.com/suleisteven/AndroidSequenceAnimations/blob/master/capture/anim2.gif)
 
-# Example
+# Usage
+
+## Step 1
+
+#### Gradle
+```groovy
+dependencies {
+        compile "com.steven:AndroidSequenceaAimations:1.0.0"
+}
+```
+## Step 2
 
 ```java
 EasyAnimation.with(
@@ -17,6 +27,22 @@ EasyAnimation.with(
                             ))
             ).playOn(targetView);
 ```
+
+# Actions
+## Instant
+`FlipX`, `FlipY`, `Show`, `Hide`, `CallFunc`
+
+## Interval
+`FadeIn`,`FadeOut`,`FadeTo`,`MoveBy`,`MoveTo`,`RotateBy`,`RotateTo`,`ScaleTo`,`DelayTime`
+
+## Container
+`Sequence`,`Together`
+
+# Todo
+1.Interval Action:`BezierMoveTo`
+2.Interval Action:`Shake`
+3.Container Action:`Repeat`,`RepeatForever`
+
 
 # Thanks
 
