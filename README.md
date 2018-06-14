@@ -39,9 +39,9 @@ EasyAnimation.with(
 `Sequence`,`Together`
 
 # Todo
-1.Interval Action:`BezierMoveTo`
-2.Interval Action:`Shake`
-3.Container Action:`Repeat`,`RepeatForever`
+1.Interval Action:`BezierMoveTo`  
+2.Interval Action:`Shake`  
+3.Container Action:`Repeat`,`RepeatForever`  
 
 
 # Thanks
