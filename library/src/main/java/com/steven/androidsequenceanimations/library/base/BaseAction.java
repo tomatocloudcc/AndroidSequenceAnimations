@@ -43,9 +43,16 @@ public abstract class BaseAction {
 
     protected View mTarget = null;
 
+    protected boolean mCanceled = false;
+
     protected void initDuration(long duration)
     {
         this.mDuration = duration;
+    }
+
+    public void cancel()
+    {
+        this.mCanceled = true;
     }
 
     /**

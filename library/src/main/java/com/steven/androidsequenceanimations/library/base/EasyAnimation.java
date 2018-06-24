@@ -21,6 +21,9 @@ import com.steven.androidsequenceanimations.library.actions.interval.MoveTo;
 import com.steven.androidsequenceanimations.library.actions.interval.RotateBy;
 import com.steven.androidsequenceanimations.library.actions.interval.RotateTo;
 import com.steven.androidsequenceanimations.library.actions.interval.ScaleTo;
+import com.steven.androidsequenceanimations.library.actions.interval.update.ColorTo;
+import com.steven.androidsequenceanimations.library.actions.interval.update.ValueFloatTo;
+import com.steven.androidsequenceanimations.library.actions.interval.update.ValueIntTo;
 
 /**
  * EasyAnimation api, combine your anim with this
@@ -28,7 +31,7 @@ import com.steven.androidsequenceanimations.library.actions.interval.ScaleTo;
 public class EasyAnimation {
 
     private BaseAction animator;
-    private float pivotX=0.5f, pivotY=0.5f;
+    private float pivotX, pivotY;
     private View target;
 
     private EasyAnimation(AnimationComposer animationComposer) {
@@ -77,13 +80,13 @@ public class EasyAnimation {
 
     public static final class EasyAnimationWrapper {
 
-        private BaseAction animator;
+        private BaseAction action;
         private View target;
         private AnimatorSet animatorSet;
 
-        private EasyAnimationWrapper(BaseAction animator, View target, AnimatorSet animatorSet) {
+        private EasyAnimationWrapper(BaseAction action, View target, AnimatorSet animatorSet) {
             this.target = target;
-            this.animator = animator;
+            this.action = action;
             this.animatorSet = animatorSet;
         }
 
@@ -95,6 +98,7 @@ public class EasyAnimation {
             if(animatorSet.isRunning())
             {
                 this.animatorSet.cancel();
+                this.action.cancel();
             }
         }
 
@@ -188,6 +192,20 @@ public class EasyAnimation {
         return new DelayTime(duration);
     }
 
+    public static ValueFloatTo valueFloatTo(long duration, float fromValue, float toValue, ValueFloatTo.IValueChange callback)
+    {
+        return new ValueFloatTo(duration, fromValue, toValue, callback);
+    }
+
+    public static ValueIntTo valueIntTo(long duration, int fromValue, int toValue, ValueIntTo.IValueChange callback)
+    {
+        return new ValueIntTo(duration, fromValue, toValue, callback);
+    }
+
+    public static ColorTo colorTo(long duration, int fromColor, int toColor, ColorTo.IColorChange callback)
+    {
+        return new ColorTo(duration, fromColor, toColor, callback);
+    }
 
     public static Hide hide()
     {

@@ -56,6 +56,7 @@ public class Sequence extends ContainerAction
         Animator[] animators2 = this.action2.doPrepare(target, animatorSet);
 
         Animator animator1 =  animators1.length >= 2 ? animators1[1] : animators1[0];
+        
         Animator animator2 =  animators2[0];
         animatorSet.play(animator1).before(animator2);
         return new Animator[]{animator1, animator2};

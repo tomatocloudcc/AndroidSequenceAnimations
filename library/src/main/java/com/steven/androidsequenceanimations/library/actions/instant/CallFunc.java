@@ -17,7 +17,7 @@ public class CallFunc extends InstantAction
         void onCall(View target);
     }
 
-    private Caller mCaller = null;
+    private Caller mCaller;
     public CallFunc(Caller caller)
     {
         super();

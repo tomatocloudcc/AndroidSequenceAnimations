@@ -18,7 +18,7 @@ public abstract class IntervalAction extends BaseAction
 
     protected Skill mEasingType = null;
 
-    IntervalAction(long duration)
+    protected IntervalAction(long duration)
     {
         this.initDuration(duration);
     }

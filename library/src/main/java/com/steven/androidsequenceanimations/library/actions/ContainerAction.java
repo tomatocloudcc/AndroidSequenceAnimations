@@ -17,6 +17,13 @@ public abstract class ContainerAction extends BaseAction
         this.action2 = action2;
     }
 
+    @Override
+    public void cancel() {
+        super.cancel();
+        this.action1.cancel();
+        this.action2.cancel();
+    }
+
     protected Animator getPreparedFirstAnimator() {
 
         if(this.action1 instanceof ContainerAction)
