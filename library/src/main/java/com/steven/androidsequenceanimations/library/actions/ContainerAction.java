@@ -1,6 +1,8 @@
 package com.steven.androidsequenceanimations.library.actions;
 
 import android.animation.Animator;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import com.steven.androidsequenceanimations.library.base.BaseAction;
 
@@ -22,6 +24,22 @@ public abstract class ContainerAction extends BaseAction
         super.cancel();
         this.action1.cancel();
         this.action2.cancel();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void pause() {
+        super.pause();
+        this.action1.pause();
+        this.action2.pause();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void resume() {
+        super.resume();
+        this.action1.resume();
+        this.action2.resume();
     }
 
     protected Animator getPreparedFirstAnimator() {

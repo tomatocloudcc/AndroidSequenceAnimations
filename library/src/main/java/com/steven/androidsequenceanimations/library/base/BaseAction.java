@@ -26,7 +26,9 @@ package com.steven.androidsequenceanimations.library.base;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.os.Build;
 import android.support.annotation.FloatRange;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 
 /**
@@ -44,6 +46,7 @@ public abstract class BaseAction {
     protected View mTarget = null;
 
     protected boolean mCanceled = false;
+    protected boolean mPaused = false;
 
     protected void initDuration(long duration)
     {
@@ -53,6 +56,18 @@ public abstract class BaseAction {
     public void cancel()
     {
         this.mCanceled = true;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void pause()
+    {
+        this.mPaused = true;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    public void resume()
+    {
+        this.mPaused = false;
     }
 
     /**

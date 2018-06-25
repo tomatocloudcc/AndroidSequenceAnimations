@@ -36,14 +36,29 @@
             android:text="startAnim1"
             android:onClick="click"
             />
-
         <Button
-            android:id="@+id/btnGoToAnim2"
+            android:id="@+id/btnPauseAnim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GoToAnim2"
+            android:text="pause"
+            android:onClick="click"
+            />
+        <Button
+            android:id="@+id/btnResumeAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="resume"
             android:onClick="click"
             />
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnGoToAnim2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GoToAnim2"
+        android:onClick="click"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
 </RelativeLayout>

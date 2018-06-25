@@ -1,10 +1,15 @@
 package com.steven.androidsequenceanimations.library.base;
 
 import android.animation.AnimatorSet;
+import android.os.Build;
 import android.support.annotation.FloatRange;
+import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.view.View;
 
+import com.steven.androidsequenceanimations.library.actions.Repeat;
+import com.steven.androidsequenceanimations.library.actions.RepeatForever;
 import com.steven.androidsequenceanimations.library.actions.Sequence;
 import com.steven.androidsequenceanimations.library.actions.Together;
 import com.steven.androidsequenceanimations.library.actions.instant.CallFunc;
@@ -102,6 +107,32 @@ public class EasyAnimation {
             }
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        public void pause()
+        {
+            if(!animatorSet.isPaused())
+            {
+                this.animatorSet.pause();
+                this.action.pause();
+            }
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        public void resume()
+        {
+            if(animatorSet.isPaused())
+            {
+                this.animatorSet.resume();
+                this.action.resume();
+            }
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+        public boolean isPaused()
+        {
+            return this.animatorSet.isPaused();
+        }
+
         public boolean isRunning()
         {
             return this.animatorSet.isRunning();
@@ -125,6 +156,16 @@ public class EasyAnimation {
 
     public static Together together(@NonNull BaseAction... baseActions) {
         return new Together(baseActions);
+    }
+
+    public static Repeat repeat(@NonNull BaseAction baseAction, @IntRange(from = 0) int repeatTimes)
+    {
+        return new Repeat(baseAction, repeatTimes);
+    }
+
+    public static RepeatForever repeatForever(@NonNull BaseAction baseAction)
+    {
+        return new RepeatForever(baseAction);
     }
 
     public static MoveTo moveTo(long duration, float x, float y)
