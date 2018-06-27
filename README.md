@@ -13,7 +13,7 @@ The library can help you build complex animations quickly, which wrapped Android
 #### Gradle
 ```groovy
 dependencies {
-        compile "com.steven:AndroidSequenceaAimations:1.1.0"
+        compile "com.steven:AndroidSequenceaAimations:1.2.0"
 }
 ```
 ## Step 2
@@ -33,7 +33,7 @@ EasyAnimation.with(
 `FlipX`, `FlipY`, `Show`, `Hide`, `CallFunc`
 
 ## Interval
-`FadeIn`,`FadeOut`,`FadeTo`,`MoveBy`,`MoveTo`,`RotateBy`,`RotateTo`,`ScaleTo`,`DelayTime`
+`FadeIn`,`FadeOut`,`FadeTo`,`MoveBy`,`MoveTo`,`MoveXTo`,`MoveYTo`,`RotateBy`,`RotateTo`,`ScaleTo`,`DelayTime`
 
 ## Update
 `ColorTo`,`ValueIntTo`,`ValueFloatTo`
