@@ -13,7 +13,8 @@ public class MoveBy extends IntervalAction
 {
     protected float mX;
     protected float mY;
-    protected boolean isBy = true;
+    protected boolean isByX = true;
+    protected boolean isByY = true;
 
     public MoveBy(long duration, float x, float y)
     {
@@ -24,9 +25,8 @@ public class MoveBy extends IntervalAction
 
     @Override
     protected Animator[] prepare(View target, AnimatorSet animatorSet) {
-        float endX = isBy ? target.getX() + this.mX : this.mX;
-        float endY = isBy ? target.getY() + this.mY : this.mY;
-
+        float endX = isByX ? target.getX() + this.mX : this.mX;
+        float endY = isByY ? target.getY() + this.mY : this.mY;
 
         ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(target, PropertyValuesHolder.ofFloat("x", endX), PropertyValuesHolder.ofFloat("y", endY));
         return  new Animator[]{animator};

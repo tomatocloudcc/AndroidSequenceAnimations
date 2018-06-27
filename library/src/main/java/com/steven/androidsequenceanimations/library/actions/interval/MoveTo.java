@@ -9,7 +9,8 @@ public class MoveTo extends MoveBy
     public MoveTo(long duration, float x, float y)
     {
         super(duration, x, y);
-        this.isBy = false;
+        this.isByX = false;
+        this.isByY = false;
     }
 
 }

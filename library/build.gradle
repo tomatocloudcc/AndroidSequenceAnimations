@@ -8,7 +8,7 @@ publish {
     userOrg = 'tomatocloud'
     groupId ="com.steven"
     artifactId = "AndroidSequenceaAimations"
-    publishVersion = "1.0.0"
+    publishVersion = "1.2.0"
     desc = 'AndroidSequenceaAimations'
     website = 'https://github.com/suleisteven/AndroidSequenceAnimations.git'
 }
@@ -16,13 +16,11 @@ publish {
 android {
     compileSdkVersion 27
 
-
-
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0.0"
+        versionCode 10200
+        versionName "1.2.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 

@@ -23,6 +23,8 @@ import com.steven.androidsequenceanimations.library.actions.interval.FadeOut;
 import com.steven.androidsequenceanimations.library.actions.interval.FadeTo;
 import com.steven.androidsequenceanimations.library.actions.interval.MoveBy;
 import com.steven.androidsequenceanimations.library.actions.interval.MoveTo;
+import com.steven.androidsequenceanimations.library.actions.interval.MoveXTo;
+import com.steven.androidsequenceanimations.library.actions.interval.MoveYTo;
 import com.steven.androidsequenceanimations.library.actions.interval.RotateBy;
 import com.steven.androidsequenceanimations.library.actions.interval.RotateTo;
 import com.steven.androidsequenceanimations.library.actions.interval.ScaleTo;
@@ -171,6 +173,16 @@ public class EasyAnimation {
     public static MoveTo moveTo(long duration, float x, float y)
     {
         return new MoveTo(duration, x, y);
+    }
+
+    public static MoveXTo moveXTo(long duration, float x)
+    {
+        return new MoveXTo(duration, x);
+    }
+
+    public static MoveYTo moveYTo(long duration, float y)
+    {
+        return new MoveYTo(duration, y);
     }
 
     public static MoveBy moveBy(long duration, float x, float y)

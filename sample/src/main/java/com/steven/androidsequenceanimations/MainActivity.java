@@ -26,6 +26,8 @@ import static com.steven.androidsequenceanimations.library.base.EasyAnimation.de
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.fadeIn;
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.fadeOut;
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.moveTo;
+import static com.steven.androidsequenceanimations.library.base.EasyAnimation.moveXTo;
+import static com.steven.androidsequenceanimations.library.base.EasyAnimation.moveYTo;
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.repeat;
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.repeatForever;
 import static com.steven.androidsequenceanimations.library.base.EasyAnimation.rotateTo;
@@ -72,7 +74,7 @@ public class MainActivity extends Activity
                                                 delayTime(500),
                                                 fadeIn(1000),
                                                 together(scaleTo(1000, 3f, 1f).easing(Skill.BounceEaseInOut),
-                                                        moveTo(1000, 0, 0).easing(Skill.BounceEaseOut),
+                                                        moveYTo(1000, 0).easing(Skill.BounceEaseOut),
                                                         moveTo(1000, ((View)(targetView2.getParent())).getMeasuredWidth() - targetView2.getMeasuredWidth(), ((View)(targetView2.getParent())).getMeasuredHeight() - targetView2.getMeasuredHeight()).easing(Skill.BounceEaseOut).bindTarget(targetView2)
                                                 ),
                                                 colorTo(1000, Color.GRAY, Color.RED, new ColorTo.IColorChange() {
