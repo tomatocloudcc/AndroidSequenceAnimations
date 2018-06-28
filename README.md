@@ -1,3 +1,4 @@
+[中文请看这里](https://www.jianshu.com/p/6b4acb6c42ac)
 # Android Sequence Animations
 The library can help you build complex animations quickly, which wrapped Android animation, supporting parallel and serial animation combination.
 
